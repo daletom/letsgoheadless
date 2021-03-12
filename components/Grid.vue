@@ -31,7 +31,7 @@ export default {
     ];
 
     this.rowData = [
-      { cms: "Headless Wordpress", frontend: "Gatsby", desktop: 62, mobile: 93, link: "wptogatsby" },
+      { cms: "Headless Wordpress", frontend: "Gatsby", desktop: 77, mobile: 94, link: "wptogatsby" },
       { cms: "Contentful", frontend: "Gatsby", desktop: 63, mobile: 89, link: "contentfultogatsby" },
       { cms: "Dato CMS", frontend: "Gatsby", desktop: 57, mobile: 84, link: "datocmstogatsby" },
       { cms: "Prismic", frontend: "Gatsby", desktop: 0, mobile: 0, link: "" },
