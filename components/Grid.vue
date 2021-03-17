@@ -35,6 +35,7 @@ export default {
       { cms: "Contentful", frontend: "Gatsby", mobile: 63, desktop: 89, link: "contentfultogatsby" },
       { cms: "Dato CMS", frontend: "Gatsby", mobile: 57, desktop: 84, link: "datocmstogatsby" },
       { cms: "API Rocket", frontend: "Gatsby", mobile: 65, desktop: 97, link: "apirockettogatsby" },
+      { cms: "Takeshape", frontend: "Gatsby", mobile: 69, desktop: 95, link: "takeshapetogatsby" },
       { cms: "Prismic", frontend: "Gatsby", mobile: 0, desktop: 0, link: "" },
       { cms: "Dato CMS", frontend: "Next JS", mobile: 86, desktop: 99, link: "datocmstonextjs" }
     ];
