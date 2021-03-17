@@ -27,15 +27,16 @@ export default {
       { headerName: "Front End", field: "frontend", sortable: "true", filter: "true" },
       { headerName: "Desktop Pagespeed", field: "desktop", sortable: "true", filter: "true" },
       { headerName: "Mobile Pagespeed", field: "mobile", sortable: "true", filter: "true" },
-      { headerName: "Link", field: "link", cellRenderer: function(params) { return '<a href="https://'+ params.value+ '.letsgoheadless.com" target="_blank">'+ params.value+'</a>' } }
+      { headerName: "Site Link", field: "link", cellRenderer: function(params) { return '<a href="https://'+ params.value+ '.letsgoheadless.com" target="_blank">'+ params.value+'</a>' } }
     ];
 
     this.rowData = [
-      { cms: "Headless Wordpress", frontend: "Gatsby", desktop: 77, mobile: 94, link: "wptogatsby" },
-      { cms: "Contentful", frontend: "Gatsby", desktop: 63, mobile: 89, link: "contentfultogatsby" },
-      { cms: "Dato CMS", frontend: "Gatsby", desktop: 57, mobile: 84, link: "datocmstogatsby" },
-      { cms: "Prismic", frontend: "Gatsby", desktop: 0, mobile: 0, link: "" },
-      { cms: "Dato CMS", frontend: "Next JS", desktop: 86, mobile: 99, link: "datocmstonextjs" }
+      { cms: "Headless Wordpress", frontend: "Gatsby", mobile: 77, desktop: 94, link: "wptogatsby" },
+      { cms: "Contentful", frontend: "Gatsby", mobile: 63, desktop: 89, link: "contentfultogatsby" },
+      { cms: "Dato CMS", frontend: "Gatsby", mobile: 57, desktop: 84, link: "datocmstogatsby" },
+      { cms: "API Rocket", frontend: "Gatsby", mobile: 65, desktop: 97, link: "apirockettogatsby" },
+      { cms: "Prismic", frontend: "Gatsby", mobile: 0, desktop: 0, link: "" },
+      { cms: "Dato CMS", frontend: "Next JS", mobile: 86, desktop: 99, link: "datocmstonextjs" }
     ];
   }
 };
