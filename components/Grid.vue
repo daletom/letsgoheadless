@@ -37,7 +37,8 @@ export default {
       { cms: "API Rocket", frontend: "Gatsby", mobile: 65, desktop: 97, link: "apirockettogatsby" },
       { cms: "Takeshape", frontend: "Gatsby", mobile: 69, desktop: 95, link: "takeshapetogatsby" },
       { cms: "Prismic", frontend: "Gatsby", mobile: 0, desktop: 0, link: "" },
-      { cms: "Dato CMS", frontend: "Next JS", mobile: 86, desktop: 99, link: "datocmstonextjs" }
+      { cms: "Dato CMS", frontend: "Next JS", mobile: 86, desktop: 99, link: "datocmstonextjs" },
+      { cms: "Dato CMS", frontend: "Nuxt JS", mobile: 97, desktop: 99, link: "datotonuxt" }
     ];
   }
 };
