@@ -38,7 +38,8 @@ export default {
       { cms: "Takeshape", frontend: "Gatsby", mobile: 69, desktop: 95, link: "takeshapetogatsby" },
       { cms: "Prismic", frontend: "Gatsby", mobile: 0, desktop: 0, link: "" },
       { cms: "Dato CMS", frontend: "Next JS", mobile: 86, desktop: 99, link: "datocmstonextjs" },
-      { cms: "Dato CMS", frontend: "Nuxt JS", mobile: 97, desktop: 99, link: "datotonuxt" }
+      { cms: "Dato CMS", frontend: "Nuxt JS", mobile: 97, desktop: 99, link: "datotonuxt" },
+      { cms: "Takeshape", frontend: "Nuxt JS", mobile: 78, desktop: 89, link: "takeshapetonuxt" }
     ];
   }
 };
