@@ -1,9 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <h1 class="title">
-        Let's Go Headless
-      </h1>
+      <Hero />
       <p class="p-4">What is this site? It's currently in process, but it's essentially a site to look at several options for connecting a headless CMS to a jamstack front-end.  More info to come...</p>
       <Grid />
     </div>
