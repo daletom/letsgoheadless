@@ -15,6 +15,25 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 In vitae turpis massa sed elementum tempus egestas sed sed. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel. Urna nec tincidunt praesent semper feugiat nibh. Massa sed elementum tempus egestas sed. Gravida rutrum quisque non tellus orci ac auctor augue mauris. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Ut sem viverra aliquet eget sit amet tellus. Morbi leo urna molestie at elementum eu. Nam libero justo laoreet sit. Elementum nisi quis eleifend quam. Luctus accumsan tortor posuere ac. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Sit amet luctus venenatis lectus magna. Enim facilisis gravida neque convallis.
 
+
+```javascript
+export default {
+  modules: ["@nuxt/content"],
+  buildModules: ["@nuxtjs/tailwindcss"]
+};
+
+import Vue from 'vue'
+import { AgGridVue } from 'ag-grid-vue'
+
+Vue.component('ag-grid-vue', AgGridVue)
+
+meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '' }
+    ]
+```
+
 ## Fetching content
 
 Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
@@ -28,6 +47,22 @@ Ultrices mi tempus imperdiet nulla malesuada pellentesque. Id consectetur purus 
 Nulla facilisi morbi tempus iaculis urna id volutpat lacus. Ullamcorper a lacus vestibulum sed arcu. Dolor sit amet consectetur adipiscing elit ut aliquam. Velit scelerisque in dictum non consectetur a erat. Sem fringilla ut morbi tincidunt augue interdum velit euismod in. Hac habitasse platea dictumst quisque sagittis. Purus non enim praesent elementum facilisis leo vel fringilla. Amet porttitor eget dolor morbi non. Amet nisl purus in mollis nunc sed id. Pharetra vel turpis nunc eget lorem dolor sed viverra. Nunc non blandit massa enim. Curabitur vitae nunc sed velit dignissim.
 
 Id diam maecenas ultricies mi eget. Nibh praesent tristique magna sit amet. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Ut pharetra sit amet aliquam id diam maecenas ultricies mi. Quam lacus suspendisse faucibus interdum posuere lorem ipsum. At imperdiet dui accumsan sit amet. Quis lectus nulla at volutpat diam ut. Dignissim suspendisse in est ante. Quam viverra orci sagittis eu volutpat. Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Arcu non sodales neque sodales. Velit scelerisque in dictum non consectetur. Nunc faucibus a pellentesque sit amet porttitor eget dolor morbi.
+
+```
+<template>
+  <div class="flex h-full">
+      <no-ssr>
+
+    <ag-grid-vue style="width: 1000px; height: 500px;"
+                 class="ag-theme-alpine"
+                 :columnDefs="columnDefs"
+                 :rowData="rowData">
+    </ag-grid-vue>
+</no-ssr>
+
+  </div>
+</template>
+```
 
 ## Displaying content
 

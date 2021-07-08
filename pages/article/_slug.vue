@@ -1,7 +1,7 @@
 <template>
     <div class="p-4 bg-gray-50 grid grid-cols-3 gap-4">
-    <div class="prose lg:prose-lg col-span-2">
-      <nuxt-content ref="nuxtContent" :document="article" />
+    <div class="prose lg:prose-xl col-span-2">
+      <nuxt-content ref="nuxtContent" :document="article" class="prose" />
     </div>
     <aside ref="toc" class="col-span-1 lg:flex lg:flex-col">
       <div class="sticky top-16">
@@ -88,5 +88,17 @@ methods: {
 <style>
 .article-toc {
     scroll-behavior: smooth;
+}
+.nuxt-content p {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.nuxt-content h2 {
+    font-weight: bold;
+    font-size: 28px;
+  }
+.nuxt-content h3 {
+    font-weight: bold;
+    font-size: 22px;
 }
 </style>

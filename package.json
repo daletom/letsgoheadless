@@ -9,14 +9,15 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxt/content": "^1.11.1",
-    "ag-grid-community": "^25.1.0",
-    "ag-grid-vue": "^25.1.0",
-    "core-js": "^3.8.2",
-    "nuxt": "^2.14.12",
-    "vue-property-decorator": "^8.5.1"
+    "@nuxt/content": "^1.14.0",
+    "@tailwindcss/typography": "^0.4.1",
+    "ag-grid-community": "^25.3.0",
+    "ag-grid-vue": "^25.3.0",
+    "core-js": "^3.15.2",
+    "nuxt": "^2.15.7",
+    "vue-property-decorator": "^9.1.2"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^3.4.2"
+    "@nuxtjs/tailwindcss": "^4.2.1"
   }
 }
