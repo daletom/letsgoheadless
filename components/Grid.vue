@@ -24,7 +24,7 @@ export default {
   beforeMount() {
     this.columnDefs = [
       { headerName: "Headless CMS", field: "cms", sortable: "true", filter: "true" },
-      { headerName: "Front End", field: "frontend", sortable: "true", filter: "true" },
+      { headerName: "Front End", field: "frontend", cellRenderer: function(params) { return '<a href="/frameworks/'+ params.value+ '" target="_self">'+ params.value+'</a>' } },
       { headerName: "Desktop Pagespeed", field: "desktop", sortable: "true", filter: "true" },
       { headerName: "Mobile Pagespeed", field: "mobile", sortable: "true", filter: "true" },
       { headerName: "Site Link", field: "link", cellRenderer: function(params) { return '<a href="https://'+ params.value+ '.letsgoheadless.com" target="_blank">'+ params.value+'</a>' } }
@@ -37,10 +37,10 @@ export default {
       { cms: "API Rocket", frontend: "Gatsby", mobile: 65, desktop: 97, link: "apirockettogatsby" },
       { cms: "Takeshape", frontend: "Gatsby", mobile: 69, desktop: 95, link: "takeshapetogatsby" },
       { cms: "Prismic", frontend: "Gatsby", mobile: 0, desktop: 0, link: "" },
-      { cms: "Dato CMS", frontend: "Next JS", mobile: 86, desktop: 99, link: "datocmstonextjs" },
-      { cms: "Dato CMS", frontend: "Nuxt JS", mobile: 97, desktop: 99, link: "datotonuxt" },
-      { cms: "Takeshape", frontend: "Nuxt JS", mobile: 78, desktop: 89, link: "takeshapetonuxt" },
-      { cms: "Prismic", frontend: "Nuxt JS", mobile: 86, desktop: 91, link: "prismictonuxt" }
+      { cms: "Dato CMS", frontend: "NextJS", mobile: 86, desktop: 99, link: "datocmstonextjs" },
+      { cms: "Dato CMS", frontend: "NuxtJS", mobile: 97, desktop: 99, link: "datotonuxt" },
+      { cms: "Takeshape", frontend: "NuxtJS", mobile: 78, desktop: 89, link: "takeshapetonuxt" },
+      { cms: "Prismic", frontend: "NuxtJS", mobile: 86, desktop: 91, link: "prismictonuxt" }
     ];
   }
 };

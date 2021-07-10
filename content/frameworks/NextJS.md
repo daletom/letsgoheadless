@@ -1,11 +1,11 @@
 ---
-title: Main
+title: Next.js
 description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
-img: https://tom.imgix.net/nuxt-ecomm.jpg?auto=format,compress&w=400
-alt: nice image
+img: https://tom.imgix.net/next_transparent.png?auto=format,compress&w=300&h=300&fit=fill&fill=color&fill-color=EDF2F6&bg=EDF2F6
+alt: Next JS logo
 ---
 
-Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
+This is Next.js. Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
 
 ## Writing content
 

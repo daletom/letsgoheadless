@@ -23,6 +23,9 @@ module.exports = {
         dangerred: '#F1114D',
         darkpurple: '#200C53',
         duststorm: '#F6EAD0',
+        tomblue: '#214B91',
+        tomred: '#BF1E2F',
+        tomorange: '#F25827'
       },
       inset: {
         '16': '4rem',
@@ -57,6 +60,22 @@ module.exports = {
             '&:hover': {
               color: '#2F40EB',
             },
+          },
+          aspectRatio: {
+            none: 0,
+            square: [1, 1],
+            "16/9": [16, 9],
+            "4/3": [4, 3],
+            "21/9": [21, 9]
+          },
+          screens: {
+            xs: '320px',
+            sm: '640px',
+            md: '768px',
+            lg: '1024px',
+            xl: '1280px',
+            xxlmin: '1351px',
+            xxlmax: { max: '1350px' }
           },
           code:  {
             color: '#f7fafc',
