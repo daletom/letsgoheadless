@@ -14,7 +14,7 @@
           <div class="flex">
             <div class="relative flex ml-0">
               <nuxt-link to="/article/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-tomorange focus:outline-none transition duration-150 ease-in-out group link-style">Tutorials</nuxt-link>
-              <nuxt-link to="/cms/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-tomorange focus:outline-none transition duration-150 ease-in-out group link-style">CMS</nuxt-link>
+              <nuxt-link to="/cmss/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-tomorange focus:outline-none transition duration-150 ease-in-out group link-style">CMS</nuxt-link>
               <nuxt-link to="/frameworks/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-tomorange focus:outline-none transition duration-150 ease-in-out group link-style">Frameworks</nuxt-link>
               <nuxt-link to="/videos/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-tomorange focus:outline-none transition duration-150 ease-in-out group link-style">Videos</nuxt-link>
               <nuxt-link to="/about/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-tomorange focus:outline-none transition duration-150 ease-in-out group link-style">About</nuxt-link>

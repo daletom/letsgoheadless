@@ -1,7 +1,7 @@
 <template>
     <div class="p-4 bg-gray-50 grid grid-cols-3 gap-4">
     <div class="prose lg:prose-xl col-span-2">
-      <nuxt-content ref="nuxtContent" :document="framework" class="prose" />
+      <nuxt-content ref="nuxtContent" :document="cmss" class="prose" />
     </div>
     <aside ref="toc" class="col-span-1 lg:flex lg:flex-col">
       <div class="sticky top-16">
@@ -18,7 +18,7 @@
                 'pl-4': link.depth === 3
               }"
               class="toc-list"
-              v-for="link of framework.toc"
+              v-for="link of cmss.toc"
               :key="link.id"
             >
               <a
@@ -43,8 +43,8 @@
 <script>
 export default {
     async asyncData({ $content, params }) {
-        const framework = await $content('frameworks', params.slug).fetch();
-    return { framework }
+        const cmss = await $content('cmss', params.slug).fetch();
+    return { cmss }
     },
     data() {
     return {

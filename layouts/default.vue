@@ -60,4 +60,17 @@ html {
   color: #fff;
   background-color: #35495e;
 }
+
+.nuxt-content p {
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+.nuxt-content h2 {
+    font-weight: bold;
+    font-size: 28px;
+  }
+.nuxt-content h3 {
+    font-weight: bold;
+    font-size: 22px;
+}
 </style>

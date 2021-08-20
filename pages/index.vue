@@ -1,15 +1,19 @@
 <template>
   <div class="container">
-    <div>
       <Hero />
-      <p class="p-4">What is this site? It's currently in process, but it's essentially a site to look at several options for connecting a headless CMS to a jamstack front-end.  More info to come...</p>
-      <Grid />
+      <div class="prose lg:prose-xl col-span-2">
+      <nuxt-content ref="nuxtContent" :document="home" class="prose" />
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+    async asyncData({ $content, params }) {
+        const home = await $content('home', params.slug).fetch();
+    return { home }
+    }
+}
 </script>
 
 <style>

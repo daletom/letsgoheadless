@@ -1,5 +1,5 @@
 <template>
-  <div class="flex h-full">
+  <div class="flex h-full justify-center">
       <no-ssr>
 
     <ag-grid-vue style="width: 1000px; height: 500px;"
