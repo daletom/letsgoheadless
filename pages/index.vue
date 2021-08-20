@@ -1,8 +1,7 @@
 <template>
   <div class="container">
-      <Hero />
       <div class="prose lg:prose-xl col-span-2">
-      <nuxt-content ref="nuxtContent" :document="home" class="prose" />
+      <nuxt-content ref="nuxtContent" :document="home" class="prose text-2xl" />
     </div>
   </div>
 </template>

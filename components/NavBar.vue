@@ -4,20 +4,20 @@
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
         <div class="flex-shrink-0">
-          <nuxt-link to="/" class="flex items-center text-tomorange">
-            <Logo class="block lg:hidden h-6 w-auto"/>
-            <Logo class="hidden lg:block h-6 w-auto"/>
-            <span class="font-h1 text-xl ml-3">Let's Go Headless</span>
+          <nuxt-link to="/" class="flex items-center text-tomorange hover:text-white">
+            <Logo class="block lg:hidden"/>
+            <Logo class="hidden lg:block"/>
+            <span class="font-h1 font-bold text-2xl ml-3">Let's Go Headless</span>
           </nuxt-link>
         </div>
         <div class="hidden sm:block sm:ml-6">
           <div class="flex">
             <div class="relative flex ml-0">
-              <nuxt-link to="/article/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-tomorange focus:outline-none transition duration-150 ease-in-out group link-style">Tutorials</nuxt-link>
-              <nuxt-link to="/cmss/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-tomorange focus:outline-none transition duration-150 ease-in-out group link-style">CMS</nuxt-link>
-              <nuxt-link to="/frameworks/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-tomorange focus:outline-none transition duration-150 ease-in-out group link-style">Frameworks</nuxt-link>
-              <nuxt-link to="/videos/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-tomorange focus:outline-none transition duration-150 ease-in-out group link-style">Videos</nuxt-link>
-              <nuxt-link to="/about/" href="#" class="px-3 py-2 rounded-md text-sm font-h2 font-medium leading-5 text-tomorange focus:outline-none transition duration-150 ease-in-out group link-style">About</nuxt-link>
+              <nuxt-link to="/article/" href="#" class="px-3 py-2 rounded-md text-2xl font-h2 font-medium leading-5 text-tomorange hover:text-white focus:outline-none transition duration-150 ease-in-out group link-style">Tutorials</nuxt-link>
+              <nuxt-link to="/cmss/" href="#" class="px-3 py-2 rounded-md text-2xl font-h2 font-medium leading-5 text-tomorange hover:text-white focus:outline-none transition duration-150 ease-in-out group link-style">CMS</nuxt-link>
+              <nuxt-link to="/frameworks/" href="#" class="px-3 py-2 rounded-md text-2xl font-h2 font-medium leading-5 text-tomorange hover:text-white focus:outline-none transition duration-150 ease-in-out group link-style">Frameworks</nuxt-link>
+              <nuxt-link to="/videos/" href="#" class="px-3 py-2 rounded-md text-2xl font-h2 font-medium leading-5 text-tomorange hover:text-white focus:outline-none transition duration-150 ease-in-out group link-style">Videos</nuxt-link>
+              <nuxt-link to="/about/" href="#" class="px-3 py-2 rounded-md text-2xl font-h2 font-medium leading-5 text-tomorange hover:text-white focus:outline-none transition duration-150 ease-in-out group link-style">About</nuxt-link>
             </div>
           </div>
         </div>

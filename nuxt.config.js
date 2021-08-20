@@ -26,7 +26,8 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    "@/plugins/ag-grid.client.js"
+    "@/plugins/ag-grid.client.js",
+    "~/plugins/vue-imgix.js"
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
