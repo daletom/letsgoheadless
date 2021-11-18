@@ -5,7 +5,7 @@ img: https://tom.imgix.net/gatsby_transparent.png?auto=format,compress&w=300&h=3
 alt: gatsby logo
 ---
 
-This is Gatsby. Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
+Gatsby is a static site generation web framework that combines functionality from **React, GraphQL, and Webpack** to make it easy to building static websites and apps. Gatsby's focus is to make integrating different content, APIs, and services into a simple web experience.
 
 ## Writing content
 
