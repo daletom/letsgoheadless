@@ -13,6 +13,9 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: 'This is a informational and tutorial website about Headless Web Architecture.  Learn to make your own headless website by viewing over 20 simple tutorials accompanied with videos.  Each tutorial is a combination of using either Gatsby, Next.js, or Nuxt.js as a front-end framework along with many headless CMS examples.  ' },
       { hid: 'og:image', property: 'og:image', content: 'https://tom.imgix.net/letsgoheadless_logo_mobile.png?ixlib=vue-2.9.0&auto=format%2Ccompress&fit=crop&ar=1.8%3A1&bg=262261&w=799'},
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary_large_image'},
+      { hid: 'twitter:site', name: 'twitter:site', content: '@letsgoheadless'},
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Lets Go Headless'},
       { hid: 'twitter:description', name: 'twitter:description', content: 'This is a informational and tutorial website about Headless Web Architecture.  Learn to make your own headless website by viewing over 20 simple tutorials accompanied with videos.  Each tutorial is a combination of using either Gatsby, Next.js, or Nuxt.js as a front-end framework along with many headless CMS examples.  ' },
       { hid: 'twitter:image', property: 'twitter:image', content: 'https://tom.imgix.net/letsgoheadless_logo_mobile.png?ixlib=vue-2.9.0&auto=format%2Ccompress&fit=fill&ar=1%3A1&bg=262261&w=400&h=400'}
     ],
