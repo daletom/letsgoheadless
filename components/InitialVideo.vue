@@ -20,6 +20,19 @@
           <li>Plans for the future of the site</li>
           <li>Where to go next on the site</li>
         </ul> 
+        <p class="text-xl pt-5">Would you like to see more videos or learn more about the site? Click below</p>
+            <div class="pt-10">
+              <nuxt-link to="/videos">
+              <button class="bg-tomblue hover:bg-tomorange text-white font-bold py-2 px-4 rounded">
+                More Videos
+              </button>
+              </nuxt-link>
+              <nuxt-link to="/about">
+              <button class="bg-tomblue hover:bg-tomorange text-white font-bold py-2 px-4 rounded">
+                About Page
+              </button>
+              </nuxt-link>
+            </div>
       </div>
     </div>
   </div>
