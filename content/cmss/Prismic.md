@@ -7,11 +7,27 @@ alt: Prismic logo
 
 This is Prismic. It is a **headless cms**.
 
-## Writing content
+## Creating a Prismic Account
 
-Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.
+You will need to go to: https://prismic.io/ to create a new account.  There are free community accounts at Primsic. It includes a lot of unlimited features, the only cap is at 100 GB of built-in CDN.  
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<img src="https://tom.imgix.net/prismic_pricing.png?auto=format,compress&w=800" alt="Prismic Pricing">
+
+## Setting Up Your Custom Types
+
+In Prismic you will need to create models to define the content you will be using in your project.  They call these `Custom Types`.  They divide them into 2 categories, `single` and `repeatable`.  For this tutorial, we will make one ef each of these custom types.  Let's start by making a single custom type.  
+
+Our single custom type will be a prominent article at the top of our project.  Kind of like the highlighted or primary article.  Click on the custom types section, click the green create new button, choose single, and give it a name.  I am calling mine `teaser`.  You will now be in a UI where you will drag and drop different models of content.  You will also notice a Slice zone that is toggled off. We aren't going to use that, but, I highly recommend reading more about Slices for future projects: https://prismic.io/docs/core-concepts/slices.  This is a large differentiator of Prismic compared to other Headless CMSs.  It's essentially a way to create dynamic sections for your website/app that later will give a large amount of flexibility and ease for content creators to build and add sections/content to the website.  
+
+For our single type, go ahead and drag over UID, Title, Rich Text, and image.  When you drag them over, it will ask you to give them names for the api calls. I have used uid, title, content, and heroimage.  This is all we will need to create a simple media article for our project.  Please note that if you press the gear next to these different fields, you can modify some items.  For the image field, it will let you add `Responsive Views`.  Don't bother with doing that.  We will create responsive views in the code of our front-end frameworks instead.  It will be much easier to code this using an SDK there.  
+
+Now go back to the custom type section and create one more, but this time a repeatable type.  Drag over all four of the same items and name them all the same as well.  I called this repeatable type `post`.  We will essentially be able to create one article in the teaser, then create multiple articles in the post custom type.  It will just list every post below the teaser.  
+
+## Add Your Content
+
+It is now time to add your content to the site.  You can add anything you want, it will not affect the result of following one of my tutorials since you I am coding using the API names we created for our objects.  So as long as you used the same API names for each object above, the actual content you create will not matter.  
+
+If you would like to do the identical content, it is listed here:
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu lobortis elementum nibh tellus molestie nunc non blandit. Nibh tortor id aliquet lectus. Suspendisse in est ante in. Sit amet dictum sit amet justo donec. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Elit pellentesque habitant morbi tristique. A diam maecenas sed enim ut. A erat nam at lectus. Consectetur a erat nam at lectus urna duis convallis convallis. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Ultrices gravida dictum fusce ut placerat. Sit amet aliquam id diam maecenas ultricies mi eget. Et odio pellentesque diam volutpat commodo sed egestas egestas. Proin sed libero enim sed faucibus turpis in eu. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Sit amet facilisis magna etiam tempor orci eu. Hac habitasse platea dictumst quisque. Tempor id eu nisl nunc mi ipsum faucibus. Ut etiam sit amet nisl purus in mollis.
 

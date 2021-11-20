@@ -1,49 +1,56 @@
 ---
-title: Nuxt.js
-description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
-img: https://tom.imgix.net/nuxt_transparent.png?auto=format,compress&w=300&h=300&fit=fill&fill=color&fill-color=EDF2F6&bg=EDF2F6
-alt: Nuxt JS logo
+title: Prismic to Nuxt.js
+description: 'A tutorial for using the Headless CMS Prismic with the front-end framework Nuxt.js.'
+img: https://tom.imgix.net/nuxt-ecomm.jpg?auto=format,compress&w=400
+alt: nice image
 ---
 
-This is Nuxt.js. Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
+Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
 
 ## Installation
 
-Run the following command to start a nuxt project:
+If this is your first time setting up Nuxt.js, I would suggest following the initial intructions in the Nuxt.js page: https://www.letsgoheadless.com/frameworks/NuxtJS.
 
-``` 
-npm init nuxt-app "projectname"
+Once it is installed, you will next need to add the `@nuxtjs/prismic` dependecy to your project.
+
+```bash
+npm install --save-dev @nuxtjs/prismic
 ```
-If this is your first time creating a Nuxt app, it will ask you to install the `create-nuxt-app`.  Once that is installed, you will see a list of items to fill out in your terminal to create your project.  I am using Javascript, choose your package manager, Tailwind CSS as my UI framework, I do not need any of these additional modules, choose the LINTER of your choice, no testing framework, a Universal rendering mode, Static hosting, I choose a jsconfig.json since I am using the VS Code editor, then your github info.  The Universal rendering mode and Static hosting are important to do, the rest you can change or modify as you wish. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eu lobortis elementum nibh tellus molestie nunc non blandit. Nibh tortor id aliquet lectus. Suspendisse in est ante in. Sit amet dictum sit amet justo donec. Pulvinar mattis nunc sed blandit libero volutpat sed cras. Elit pellentesque habitant morbi tristique. A diam maecenas sed enim ut. A erat nam at lectus. Consectetur a erat nam at lectus urna duis convallis convallis. Diam in arcu cursus euismod quis viverra nibh cras pulvinar. Ultrices gravida dictum fusce ut placerat. Sit amet aliquam id diam maecenas ultricies mi eget. Et odio pellentesque diam volutpat commodo sed egestas egestas. Proin sed libero enim sed faucibus turpis in eu. Tortor vitae purus faucibus ornare suspendisse sed nisi lacus. Sit amet facilisis magna etiam tempor orci eu. Hac habitasse platea dictumst quisque. Tempor id eu nisl nunc mi ipsum faucibus. Ut etiam sit amet nisl purus in mollis.
-
-In vitae turpis massa sed elementum tempus egestas sed sed. Ridiculus mus mauris vitae ultricies leo integer malesuada nunc vel. Urna nec tincidunt praesent semper feugiat nibh. Massa sed elementum tempus egestas sed. Gravida rutrum quisque non tellus orci ac auctor augue mauris. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Ut sem viverra aliquet eget sit amet tellus. Morbi leo urna molestie at elementum eu. Nam libero justo laoreet sit. Elementum nisi quis eleifend quam. Luctus accumsan tortor posuere ac. Vulputate sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Sit amet luctus venenatis lectus magna. Enim facilisis gravida neque convallis.
-
+You will then need to add @nuxtjs/prismic to the `buildModules` section of your `nuxt.config.js`.
 
 ```javascript
-export default {
-  modules: ["@nuxt/content"],
-  buildModules: ["@nuxtjs/tailwindcss"]
-};
-
-import Vue from 'vue'
-import { AgGridVue } from 'ag-grid-vue'
-
-Vue.component('ag-grid-vue', AgGridVue)
-
-meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
-    ]
+{
+  buildModules: [
+    '@nuxtjs/prismic'
+  ],
+  prismic: {
+    endpoint: 'https://<REPOSITORY>.cdn.prismic.io/api/v2',
+    modern: true
+  }
+}
 ```
 
-## Fetching content
+We will replace the `<REPOSITORY>` name in the endpoint later after we make our prismic account.  Then you need to add create a folder called `prismic`, then create a `link-resolver.js` file inside that folder and add this function:
 
-Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
+```javascript
+export default function(doc) {
+  return '/'
+}
+```
+
+
+## Integrating Your Prismic Account
+
+You will now need to create a Prismic account if you do not have one.  You can follow the instructions in my Prismic CMS section here: https://www.letsgoheadless.com/cmss/Prismic.
+
+Once you have created your account, it would be great to create some content as well.  At least create one item for your single custom type and one item for your repeatable custom type.  If you would like to copy the exact content I am entering, you can find that here: 
+
+Once you have some content, lets connect Nuxt to that Prismic account.  While you are logged in to Prismic, click the gear at the bottom left.  Then click on `API & Security`, which is in the configuration section.  You should see an API endpoint below several icons to choose your technology.  It should already be selected as Javascript.  Go ahead and grap that url for the api access and enter that in the prismic endpoint we create in your `nuxt.config.js`.  
+
+## Adding Code to View Content
+
+...
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices eros in cursus turpis massa tincidunt. Tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse. Eleifend mi in nulla posuere sollicitudin aliquam ultrices. Mollis aliquam ut porttitor leo a diam sollicitudin tempor id. Euismod nisi porta lorem mollis aliquam ut. Sit amet mauris commodo quis. Augue lacus viverra vitae congue eu consequat ac felis donec. Arcu non sodales neque sodales ut. Convallis tellus id interdum velit laoreet. Congue nisi vitae suscipit tellus mauris a diam. Sagittis id consectetur purus ut. Aliquam ultrices sagittis orci a scelerisque. Ac orci phasellus egestas tellus rutrum tellus. Sed nisi lacus sed viverra tellus in hac habitasse platea. Metus vulputate eu scelerisque felis.
 
@@ -73,7 +80,9 @@ Id diam maecenas ultricies mi eget. Nibh praesent tristique magna sit amet. Cons
 
 ## Displaying content
 
-Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
+
+
+
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat sed lectus. Pellentesque adipiscing commodo elit at imperdiet. Nisl vel pretium lectus quam id leo in vitae. Vitae tempus quam pellentesque nec nam. Elit sed vulputate mi sit amet mauris commodo quis. Turpis massa sed elementum tempus egestas sed sed risus. Eleifend mi in nulla posuere sollicitudin aliquam. In massa tempor nec feugiat nisl pretium fusce id. Gravida dictum fusce ut placerat orci nulla pellentesque. Quis risus sed vulputate odio ut enim blandit. Pulvinar neque laoreet suspendisse interdum. Auctor neque vitae tempus quam pellentesque nec nam aliquam.
 
