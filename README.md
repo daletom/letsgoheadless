@@ -1,20 +1,5 @@
 # letsgoheadless
 
-## Build Setup
+This is an informational and tutorial video website about Headless Web Architecture.  Learn to get started making your own headless website by watching these videos.  Tutorials are written and on video.  They will initially use three front-end frameworks: Gatsby, Next.js, and Nuxt.js with a combination of many different headless CMSs.
 
-```bash
-# install dependencies
-$ npm install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+Currently being worked on...
