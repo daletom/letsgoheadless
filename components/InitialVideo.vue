@@ -5,6 +5,7 @@
         <lite-youtube
           class="youtube"
           videoid="8M16E8fNSE4"
+          style="background-image: url('https://tom.imgix.net/whatisheadless_videothumb.png?auto=format,compress&w=600');"
         />
       </div>
       <div class="flex-1 p-4">

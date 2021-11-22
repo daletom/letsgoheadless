@@ -5,11 +5,17 @@ img: https://tom.imgix.net/nuxt-ecomm.jpg?auto=format,compress&w=400
 alt: nice image
 ---
 
-Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
+Whatever my welcome paragraph is.  Include a YT link, live url link, and gh link.  Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
 
 ## Installation
 
-If this is your first time setting up Nuxt.js, I would suggest following the initial intructions in the Nuxt.js page: https://www.letsgoheadless.com/frameworks/NuxtJS.
+Run the following command to start a nuxt project:
+
+```bash 
+npm init nuxt-app "projectname"
+```
+
+If you need more info about installing Nuxt, I would suggest following the initial intructions in the Nuxt.js page of this website: https://www.letsgoheadless.com/frameworks/NuxtJS.
 
 Once it is installed, you will next need to add the `@nuxtjs/prismic` dependecy to your project.
 
@@ -42,50 +48,220 @@ export default function(doc) {
 
 ## Integrating Your Prismic Account
 
-You will now need to create a Prismic account if you do not have one.  You can follow the instructions in my Prismic CMS section here: https://www.letsgoheadless.com/cmss/Prismic.
+You will now need to create a Prismic account if you do not have one.  Once you have created it, you will need to make two different Custom Types, a single and a repeatable custom type.  Our single custom type will be a prominent article at the top of our project. I will call this one `teaser`. Our repeatable custom type will be a list of posts to go below our prominent article at the top. I will call this one `post`.
+
+For both custom types, you will be adding the same items.  You will need to choose UID, Title, Rich Text, and image. When you drag them over in the Prismic UI, it will ask you to give them names for the api calls. I have used uid, title, content, and heroimage.  If you have never made a Prismic account before, you can get more detailed instructions in my Prismic CMS section here: https://www.letsgoheadless.com/cmss/Prismic.
 
 Once you have created your account, it would be great to create some content as well.  At least create one item for your single custom type and one item for your repeatable custom type.  If you would like to copy the exact content I am entering, you can find that here: 
 
 Once you have some content, lets connect Nuxt to that Prismic account.  While you are logged in to Prismic, click the gear at the bottom left.  Then click on `API & Security`, which is in the configuration section.  You should see an API endpoint below several icons to choose your technology.  It should already be selected as Javascript.  Go ahead and grap that url for the api access and enter that in the prismic endpoint we create in your `nuxt.config.js`.  
 
-## Adding Code to View Content
+## Adding Code to View Basic Scaffolding
 
-...
+It's time to open up your favorite code editor for the Nuxt project you created. Go to the `index.vue` file in your pages folder and remove the `<Tutorial>` component. You can also deleted the `Tutorial.vue` file in the components folder as well.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ultrices eros in cursus turpis massa tincidunt. Tempus egestas sed sed risus pretium quam vulputate dignissim suspendisse. Eleifend mi in nulla posuere sollicitudin aliquam ultrices. Mollis aliquam ut porttitor leo a diam sollicitudin tempor id. Euismod nisi porta lorem mollis aliquam ut. Sit amet mauris commodo quis. Augue lacus viverra vitae congue eu consequat ac felis donec. Arcu non sodales neque sodales ut. Convallis tellus id interdum velit laoreet. Congue nisi vitae suscipit tellus mauris a diam. Sagittis id consectetur purus ut. Aliquam ultrices sagittis orci a scelerisque. Ac orci phasellus egestas tellus rutrum tellus. Sed nisi lacus sed viverra tellus in hac habitasse platea. Metus vulputate eu scelerisque felis.
+No go back to your `index.vue` file in the pages folder.  Let's add the code to show your teaser post:
 
-Donec pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. Tincidunt eget nullam non nisi est sit amet facilisis. Faucibus in ornare quam viverra orci sagittis eu volutpat. Sodales ut etiam sit amet. Pretium vulputate sapien nec sagittis aliquam malesuada bibendum arcu. Tincidunt dui ut ornare lectus sit amet est. Sagittis vitae et leo duis ut diam quam nulla porttitor. Viverra tellus in hac habitasse platea dictumst. Eget egestas purus viverra accumsan in nisl nisi. Scelerisque purus semper eget duis at. Ipsum dolor sit amet consectetur adipiscing elit.
-
-Ultrices mi tempus imperdiet nulla malesuada pellentesque. Id consectetur purus ut faucibus pulvinar elementum integer enim. Ultrices tincidunt arcu non sodales neque sodales. Amet venenatis urna cursus eget nunc scelerisque viverra mauris. Magna eget est lorem ipsum dolor. Sed viverra tellus in hac habitasse. Viverra vitae congue eu consequat. Nibh cras pulvinar mattis nunc sed blandit libero volutpat sed. Egestas diam in arcu cursus euismod quis viverra nibh cras. Tincidunt tortor aliquam nulla facilisi cras fermentum odio eu feugiat. Duis tristique sollicitudin nibh sit amet commodo nulla facilisi. Habitant morbi tristique senectus et netus et malesuada fames ac. Vel quam elementum pulvinar etiam non quam lacus. Lobortis elementum nibh tellus molestie nunc non blandit massa enim. Maecenas pharetra convallis posuere morbi.
-
-Nulla facilisi morbi tempus iaculis urna id volutpat lacus. Ullamcorper a lacus vestibulum sed arcu. Dolor sit amet consectetur adipiscing elit ut aliquam. Velit scelerisque in dictum non consectetur a erat. Sem fringilla ut morbi tincidunt augue interdum velit euismod in. Hac habitasse platea dictumst quisque sagittis. Purus non enim praesent elementum facilisis leo vel fringilla. Amet porttitor eget dolor morbi non. Amet nisl purus in mollis nunc sed id. Pharetra vel turpis nunc eget lorem dolor sed viverra. Nunc non blandit massa enim. Curabitur vitae nunc sed velit dignissim.
-
-Id diam maecenas ultricies mi eget. Nibh praesent tristique magna sit amet. Consectetur adipiscing elit ut aliquam purus sit amet luctus venenatis. Ut pharetra sit amet aliquam id diam maecenas ultricies mi. Quam lacus suspendisse faucibus interdum posuere lorem ipsum. At imperdiet dui accumsan sit amet. Quis lectus nulla at volutpat diam ut. Dignissim suspendisse in est ante. Quam viverra orci sagittis eu volutpat. Arcu dui vivamus arcu felis bibendum ut tristique et egestas. Arcu non sodales neque sodales. Velit scelerisque in dictum non consectetur. Nunc faucibus a pellentesque sit amet porttitor eget dolor morbi.
-
-```
+```javascript
 <template>
-  <div class="flex h-full">
-      <no-ssr>
-
-    <ag-grid-vue style="width: 1000px; height: 500px;"
-                 class="ag-theme-alpine"
-                 :columnDefs="columnDefs"
-                 :rowData="rowData">
-    </ag-grid-vue>
-</no-ssr>
-
+  <div class="lg:pl-24 lg:pr-24 pt-4">
+    <div class="text-center bg-white rounded-xl shadow-md">
+      <h1 class="blog-title">
+        Hello World
+      </h1>
+      <div class="py-8 px-8 mx-auto space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6 md:py-4 md:flex md:items-center md:space-y-0 md:space-x-6">
+        <img
+          src="https://tom.imgix.net/1x1_motif.png?ixlib=vue-2.9.0&auto=format%2Ccompress&txt=Place%20Holder&ar=1%3A1&bg=grey&txt-align=middle%2Ccenter&txt-size=75&txt-fit=max&w=380"
+        />
+        <div class="text-center space-y-2">
+          <div class="space-y-0.5">
+          <p class="blog-description inline">This is my blog post.</p> 
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+
+<script>
+export default {}
+</script>
 ```
 
-## Displaying content
+You're not using any of the Prismic APIs yet, I'm just building the scaffolding first.  So if you go to your terminal and type `npm run dev` or the similar yarn command, you should be able to go to `localhost:3000` and see a placeholder image with text. If you're not familiar with Tailwind CSS, I am using Tailwind for the design.  In the `class` sections of each element, I am using short words from Tailwind to create the design.  The article should appear to be on a floating card with a shadow. It will have a margin until the browser is smaller than 1024 pixels.  The text on the post will shift from being on the right to below the image once the browser goes smaller than 640 pixels.
 
+## Connecting Prismic API for teaser post
 
+Next let's remove the placeholder info and connect to the Prismic API. We will be using the `@nuxtjs/prismic` module to to do this.  I am going to be using an async request to set the teaser as the data from a prismic api call.  It will look like this:
 
+```javascript
+const teaser = (await $prismic.api.getSingle('teaser')).data
+```
 
+Since it's a single custom type, I am using `getSingle`, then I entered the name of my custom type, `teaser`.  Then you return this function and you will be able to call it in your code.  Here is the entire changes I made to the `<script>` section:
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Donec massa sapien faucibus et molestie ac feugiat sed lectus. Pellentesque adipiscing commodo elit at imperdiet. Nisl vel pretium lectus quam id leo in vitae. Vitae tempus quam pellentesque nec nam. Elit sed vulputate mi sit amet mauris commodo quis. Turpis massa sed elementum tempus egestas sed sed risus. Eleifend mi in nulla posuere sollicitudin aliquam. In massa tempor nec feugiat nisl pretium fusce id. Gravida dictum fusce ut placerat orci nulla pellentesque. Quis risus sed vulputate odio ut enim blandit. Pulvinar neque laoreet suspendisse interdum. Auctor neque vitae tempus quam pellentesque nec nam aliquam.
+```javascript
+<script>
 
-Dictum fusce ut placerat orci. Tellus integer feugiat scelerisque varius morbi. Dignissim enim sit amet venenatis urna cursus eget nunc. Consectetur adipiscing elit ut aliquam. Cursus turpis massa tincidunt dui ut ornare lectus. Aliquet bibendum enim facilisis gravida neque convallis a cras semper. Felis eget nunc lobortis mattis aliquam faucibus purus in. Nec tincidunt praesent semper feugiat nibh. Vestibulum mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Pretium vulputate sapien nec sagittis aliquam malesuada. Leo vel fringilla est ullamcorper eget. Neque vitae tempus quam pellentesque nec nam aliquam sem et. Enim neque volutpat ac tincidunt vitae semper. Aliquam sem et tortor consequat id porta. In ornare quam viverra orci sagittis. Pretium aenean pharetra magna ac placerat vestibulum lectus. Ultricies leo integer malesuada nunc vel risus commodo.
+export default {
+  name: 'Home',
+  head () {
+    return {
+      title: 'Prismic Nuxt.js Blog',
+    }
+  },
+  async asyncData({ $prismic, error }) {
+    try{
+      // Query to get blog teaser
+      const teaser = (await $prismic.api.getSingle('teaser')).data
+      // Returns data to be used in template
+      return {
+        teaser
+      }
+    } catch (e) {
+      // Returns error page
+      error({ statusCode: 404, message: 'Page not found' })
+    }
+  }
+}
+</script>
+```
 
-Hac habitasse platea dictumst vestibulum rhoncus est pellentesque elit ullamcorper. Feugiat in ante metus dictum at. Nunc aliquet bibendum enim facilisis gravida neque convallis. Dictum sit amet justo donec enim. Enim tortor at auctor urna nunc id cursus metus. Lorem sed risus ultricies tristique. Nulla facilisi nullam vehicula ipsum a arcu cursus vitae. Lacinia at quis risus sed vulputate odio ut enim blandit. Quam quisque id diam vel. Scelerisque eu ultrices vitae auctor. Venenatis a condimentum vitae sapien pellentesque habitant morbi tristique senectus.
+Now to replace the placeholder info.  In the h1 blog title section, remove Hello World with:
+
+```javascript
+{{ $prismic.asText(teaser.title) }}
+```
+
+Next, replace the entire `<img>` section with this:
+
+```javascript
+ <img
+    :src="teaser.heroimage.url"
+  />
+```
+
+Then replace the `This is my blog post.` that is in the `<p>` section with this: 
+
+```javascript
+{{ $prismic.asText(teaser.content) }}
+```
+
+Now refresh your browser on your localhost:3000 and let's see the changes take effect.  It should have all of your content now!  There is a good chance your image is way too large in this view.  That's fine, let's talk about modifying that image next.
+
+## Optimizing your teaser image
+
+So all Prismic accounts use an image service called Imgix to optimize their images.  It's a really powerful item to offer for free with all Prismic accounts which is great. You can simply add corresponding imgix APIs to the end of the Prismic urls in order to optimize the images further.  For example, you could change the image url this way to resize the width to 600: 
+
+```javascript
+<img
+  :src="teaser.heroimage.url + '&w=600'"
+/>
+```
+
+Since we are using Nuxt, there are several great options to get easy access to responsive design with imgix.  
+
+One way to do this would be to use the Nuxt Image module.  First, install Nuxt image:
+
+```bash
+npm install -D @nuxt/image
+```
+
+Then go into your `nuxt.config.js` file and add `@nuxt/image` to the buildModules section.  Now below that, add a new section called image and add prismic.  It will look like this: 
+
+```javascript
+  buildModules: [
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/prismic',
+    '@nuxt/image'
+  ],
+
+  image: {
+    prismic: {}
+  },
+```
+
+You can now go back to your index.vue file and update the `<img>` tag to a `<nuxt-img>` tag.  In the nuxt-img tag, you declare a provider to be prismic (or whatever service you choose).  You will need to add a sizes element, which will not only declare which size image to use at each size but will also create responsive breakpoints in a srcset.  Then if you have any additional APIs you want to use for your images, you can add them as `:modifers`.  In this example, I am choosing to crop images at a 1.8 to 1 aspect ratio. When I crop, I want it to crop intelligently to a face, if there is no face, then the prominent edges of the image.  I am also utilizing Client Hints, so in Chrome it will intelligently know the exact width and dpr.  You might notice an auto=format,compress in there as well, this is automatic from Prismic.  It is essentially formatting to an optimal image format based on the browser and adding some smarter compression to optimize the image.  You can read more about the different image solutions you can do with Nuxt on this website here: https://www.letsgoheadless.com/frameworks/NuxtJS.  The final nuxt-img tag is looking like this: 
+
+```javascript
+<nuxt-img
+  provider="prismic"
+  class="lg:w-3/5 md:w-1/2 sm:w-1/2 w-full"
+  sizes="xl:60vw, lg:60vw, md:50vw, sm:90vw, xs:90vw"
+  :src="teaser.heroimage.url"
+  fit="crop"
+  :modifiers="{ crop: 'faces,edges', ar: '1.8:1', ch: 'dpr,width'}"
+        />
+```
+
+This is generating a responsive design, using the right size image at each size of the browser. You will notice I have also added some tailwind classes here, this is to have the image be 60% of the the container about 1024 pixels, then be half the container until you get smaller than 640 pixels which will have the image be full width and move the article text below the image.
+
+## Connecting Prismic API for Repeatable Post
+
+Now that we have our teaser post sorted, it is time to add our repeatable post.  This should be pretty easy, because it will be similar to what we did with our teaser post.  In our async call in the script section, we will need to add a const for blogPosts and call the Prismic API to look for any document types called `post`.  We will also need to return the posts as well.  The updated async call looks like this:
+
+```javascript
+async asyncData({ $prismic, error }) {
+    try{
+      // Query to get blog home content
+      //const homepageContent = (await $prismic.api.getSingle('blog_home')).data
+      const teaser = (await $prismic.api.getSingle('teaser')).data
+      // Query to get posts content to preview
+      const blogPosts = await $prismic.api.query(
+        $prismic.predicates.at("document.type", "post")
+        //{ orderings : '[my.post.date desc]' }
+      )
+      // Returns data to be used in template
+      return {
+        teaser,
+        posts: blogPosts.results,
+        //image: homepageContent.image.url,
+      }
+    } catch (e) {
+      // Returns error page
+      error({ statusCode: 404, message: 'Page not found' })
+    }
+  }
+```
+
+Now lets add a v-if div to show results if there are posts, then a v-else if there are no posts.  
+
+```javascript
+<div v-if="posts.length !== 0" class="flex flex-wrap"></div>
+<div v-else class="blog-main">
+  <p>No Posts published at this time.</p>
+</div>
+```
+
+Then in the v-if section, we will add a v-for the posts.  If you are unfamiliar with Nuxt, this is a great benefit.  You're essentially setting up a repeatable section of code. It will check the api for the amount of results, then repeat the code for each result but replace certain items, such as image, title, etc for every single instance.  This is what it looks like:
+
+```javascript
+<div v-for="post in posts" :key="post.id" v-bind:post="post" class="p-4 lg:w-1/3 md:w-1/2 sm:w-full">
+```
+
+You typically do a v-for then a singular for a plural of the same type.  The key to differentiate is going to the id for each post.  This section will also be split into 3 columns in a larger view, then 2 columns, and single colum for mobile.  Next, let's add in our title, image, and content.  This will be the same way we did it for the teaser post.  I will use the responsive image as well.  Here is what it looks like:
+
+```javascript
+<div v-if="posts.length !== 0" class="flex flex-wrap">
+  <div v-for="post in posts" :key="post.id" v-bind:post="post" class="p-4 lg:w-1/3 md:w-1/2 sm:w-full">
+    <h2>{{ $prismic.asText(post.data.title) }}</h2>
+    <nuxt-img
+      provider="prismic"
+      loading="lazy"
+      sizes="xl:30vw, lg:40vw, md:90vw, sm:90vw, xs:90vw"
+      :src="post.data.heroimage.url"
+      fit="crop"
+      :modifiers="{ crop: 'faces,edges', ar: '1.8:1', ch: 'dpr,width'}"
+    />
+    <p>{{ $prismic.asText(post.data.content) }}</p>
+  </div>
+</div>
+```
+
+You will notice that I did add a `loading=lazy` to the img tag here, but not for the teaser.  Generally speaking, images above the fold don't need a lazy load, but the images below would benefit greatly from this. That way images from posts are not loading too early and hurting the performance of the site.  
+
+## Deploying the Site
+
+At this point, I think we have done a pretty good job adding our teaser post and repeatable posts.  There's certainly a ton of other great stuff we could keep doing.  Like adding a navbar, footer, or creating dynamic pages for each article.  I wanted to focus more on getting you started quickly with Prismic and Nuxt to get easily to a point where you feel more comfortable with the api and displaying the content using Nuxt.  
+
+Next we will want to deploy this website.  I am going to choose to use Vercel for this...
