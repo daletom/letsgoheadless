@@ -2,17 +2,13 @@
     <div class="flex flex-rounded-lg shadow-lg overflow-hidden pb-4">
         <div class="w-full lg:flex">
             <div class="video">
-                <lite-youtube
-                    v-if="item.video && item.start"
-                    :videoid="item.video"
-                    :start="item.start"
-                    class="youtube"
+                <a :href="`https://www.youtube.com/watch?v=${item.video}`" target="_blank" rel="noopener noreferrer">
+                <ix-img
+                    :src="item.image_url"
+                    :imgixParams="{ mark: 'https://tom.imgix.net/youtubeicon.svg', 'mark-align': 'middle,center', 'mark-scale': '25' }"
+                    sizes="(max-width: 600px) 100vw, 600px"
                 />
-                <lite-youtube
-                    v-else-if="item.video"
-                    :videoid="item.video"
-                    class="youtube"
-                />
+                </a>
             </div>
             <div class="flex-1 p-4">
                 <div>
