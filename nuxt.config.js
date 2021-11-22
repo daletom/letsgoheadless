@@ -20,7 +20,7 @@ export default {
       { hid: 'twitter:image', property: 'twitter:image', content: 'https://tom.imgix.net/letsgoheadless_logo_mobile.png?ixlib=vue-2.9.0&auto=format%2Ccompress&fit=fill&ar=1%3A1&bg=262261&w=400&h=400'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: 'https://tom.imgix.net/vikinghead.png?auto=format&fm=png8&w=30' }
     ]
   },
 
