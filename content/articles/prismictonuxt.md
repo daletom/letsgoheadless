@@ -7,7 +7,7 @@ alt: Prismic to Nuxt Tutorial
 
 Welcome to a tutorial using Prismic as a headless CMS with Nuxt.js as a front-end framework.  I will take you through to steps of starting a Nuxt.js app from start to finish.  We will also be creating a new Prismic account as well.  The tutorial will also be utilizing Tailwind CSS as the UI framework, the Nuxt Image module to generate a responsive design with imgix images from Prismic, and deploying with Vercel.<br>
 
-<lite-youtube class="youtube" videoid="8M16E8fNSE4" style="background-image: url('https://tom.imgix.net/whatisheadless_videothumb.png?auto=format,compress&mark-align=middle,center&w=600&mark=youtubeicon.svg');"></lite-youtube> <br> Here is a link to the live site: https://prismictonuxt.letsgoheadless.com/.
+<lite-youtube class="youtube" videoid="oLbsqXT1jcQ" style="background-image: url('https://tom.imgix.net/prismictonuxt_ytthumb.png?auto=format,compress&mark-align=middle,center&w=600&mark=youtubeicon.svg');"></lite-youtube> <br> Here is a link to the live site: https://prismictonuxt.letsgoheadless.com/.
 
 You can also see the github link here: https://github.com/daletom/prismiccmstonuxt .  
 
