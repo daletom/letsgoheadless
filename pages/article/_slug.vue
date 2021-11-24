@@ -101,4 +101,32 @@ methods: {
     font-weight: bold;
     font-size: 22px;
 }
+
+.video {
+  width: 600px;
+  height: 300px;
+}
+
+.youtube {
+  background-color: #000;
+  position: relative;
+  display: block;
+  contain: content;
+  background-position: 50%;
+  background-size: cover;
+  cursor: pointer;
+  max-width: 720px;
+  width: 600px;
+  height: 300px;
+}
+
+.lyt-visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
 </style>

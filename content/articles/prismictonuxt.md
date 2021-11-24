@@ -1,11 +1,15 @@
 ---
 title: Prismic to Nuxt.js
 description: 'A tutorial for using the Headless CMS Prismic with the front-end framework Nuxt.js.'
-img: https://tom.imgix.net/nuxt-ecomm.jpg?auto=format,compress&w=400
-alt: nice image
+img: https://tom.imgix.net/prismictonuxt_tutorial.png?auto=format,compress&w=400
+alt: Prismic to Nuxt Tutorial
 ---
 
-Whatever my welcome paragraph is.  Include a YT link, live url link, and gh link.  Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
+Welcome to a tutorial using Prismic as a headless CMS with Nuxt.js as a front-end framework.  I will take you through to steps of starting a Nuxt.js app from start to finish.  We will also be creating a new Prismic account as well.  The tutorial will also be utilizing Tailwind CSS as the UI framework, the Nuxt Image module to generate a responsive design with imgix images from Prismic, and deploying with Vercel.<br>
+
+<lite-youtube class="youtube" videoid="8M16E8fNSE4" style="background-image: url('https://tom.imgix.net/whatisheadless_videothumb.png?auto=format,compress&mark-align=middle,center&w=600&mark=youtubeicon.svg');"></lite-youtube> <br> Here is a link to the live site: https://prismictonuxt.letsgoheadless.com/.
+
+You can also see the github link here: https://github.com/daletom/prismiccmstonuxt .  
 
 ## Installation
 
@@ -14,6 +18,8 @@ Run the following command to start a nuxt project:
 ```bash 
 npm init nuxt-app "projectname"
 ```
+
+You will see a list of items to fill out in your terminal to create your project. I am using Javascript, choose your package manager, Tailwind CSS as my UI framework, I do not need any of these additional modules, choose the LINTER of your choice, no testing framework, a Universal rendering mode, Static hosting, I choose a jsconfig.json since I am using the VS Code editor, then your github info. The Universal rendering mode and Static hosting are important to do, the rest you can change or modify as you wish.
 
 If you need more info about installing Nuxt, I would suggest following the initial intructions in the Nuxt.js page of this website: https://www.letsgoheadless.com/frameworks/NuxtJS.
 
@@ -60,7 +66,7 @@ Once you have some content, lets connect Nuxt to that Prismic account.  While yo
 
 It's time to open up your favorite code editor for the Nuxt project you created. Go to the `index.vue` file in your pages folder and remove the `<Tutorial>` component. You can also deleted the `Tutorial.vue` file in the components folder as well.
 
-No go back to your `index.vue` file in the pages folder.  Let's add the code to show your teaser post:
+Now go back to your `index.vue` file in the pages folder.  Let's add the code to show your teaser post:
 
 ```javascript
 <template>
@@ -258,10 +264,33 @@ You typically do a v-for then a singular for a plural of the same type.  The key
 </div>
 ```
 
-You will notice that I did add a `loading=lazy` to the img tag here, but not for the teaser.  Generally speaking, images above the fold don't need a lazy load, but the images below would benefit greatly from this. That way images from posts are not loading too early and hurting the performance of the site.  
+You will notice that I did add a `loading=lazy` to the img tag here, but not for the teaser.  Generally speaking, images above the fold don't need a lazy load, but the images below would benefit greatly from this. That way images from posts are not loading too early and hurting the performance of the site.  Refresh your localhost and check that your posts are displaying.
 
 ## Deploying the Site
 
 At this point, I think we have done a pretty good job adding our teaser post and repeatable posts.  There's certainly a ton of other great stuff we could keep doing.  Like adding a navbar, footer, or creating dynamic pages for each article.  I wanted to focus more on getting you started quickly with Prismic and Nuxt to get easily to a point where you feel more comfortable with the api and displaying the content using Nuxt.  
 
-Next we will want to deploy this website.  I am going to choose to use Vercel for this...
+Next we will want to deploy this website.  I am going to choose to use Vercel for this. To make the deployment on Vercel smooth, I am going to use their nuxtjs/vercel-builder.  So let's create a `vercel.json` file in your project.  Then add this to it: 
+
+```javascript
+{
+    "builds": [
+        {
+        "src": "nuxt.config.js",
+        "use": "@nuxtjs/vercel-builder",
+        "config": {}
+        }
+    ],
+    "routes": [
+        {
+          "src": "/*",
+            "headers": {
+              "Accept-CH": "DPR, Width, Viewport-Width",
+              "Feature-Policy": "ch-dpr https://images.prismic.io/ 'self'; ch-width https://images.prismic.io/ 'self'; ch-viewport-width https://images.prismic.io/ 'self'"
+            }
+        }
+      ]
+}
+```
+
+Now you can add your code to your Github repo and then login to Vercel.com.  Click on `New Project`. If you have the Vercel for Github, then you should already see your new Github repo that you created. If you don't, you can setup that integration here: https://vercel.com/docs/concepts/git/vercel-for-github.  Click on your repo, no need to change any of the default settings on Vercel, and press deploy.  After about 90 seconds, it should be deployed!
