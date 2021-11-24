@@ -5,7 +5,7 @@
         <lite-youtube
           class="youtube"
           videoid="8M16E8fNSE4"
-          style="background-image: url('https://tom.imgix.net/whatisheadless_videothumb.png?auto=format,compress&w=600');"
+          style="background-image: url('https://tom.imgix.net/whatisheadless_videothumb.png?auto=format,compress&w=600&mark-align=middle,center&mark=youtubeicon.svg');"
         />
       </div>
       <div class="flex-1 p-4">
@@ -66,21 +66,6 @@ list-style-type: circle;
   max-width: 720px;
   width: 600px;
   height: 300px;
-}
-
-.lty-playbtn {
-  width: 68px;
-  height: 48px;
-  position: absolute;
-  cursor: pointer;
-  transform: translate3d(-50%,-50%,0);
-  top: 50%;
-  left: 50%;
-  z-index: 1;
-  background-color: transparent;
-  background-image: url(https://tom.imgix.net/youtubeicon.svg);
-  transition: filter .1s cubic-bezier(0,0,.2,1);
-  border: none;
 }
 
 .lyt-visually-hidden {
