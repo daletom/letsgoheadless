@@ -1,8 +1,8 @@
 ---
 title: Dato CMS to Nuxt.js
 description: 'A tutorial for using the Dato CMS, a headless CMS, with the front-end framework Nuxt.js.'
-img: https://tom.imgix.net/nuxt-ecomm.jpg?auto=format,compress&w=400
-alt: nice image
+img: https://tom.imgix.net/datotonuxt_tutorial.png?auto=format,compress&w=400
+alt: Dato CMS to Nuxt Tutorial image
 ---
 
 Whatever my welcome paragraph is.  Include a YT link, live url link, and gh link.  Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
