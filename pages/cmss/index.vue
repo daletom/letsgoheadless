@@ -1,6 +1,7 @@
 <template>
     <div>
         <h1 class="font-bold text-4xl ml-4 mt-6 mb-6 text-center">Content Management Solutions</h1>
+        <h3>What is this site? It's currently in process, but it's essentially a site to look at several options for connecting a headless CMS to a jamstack front-end.  To be launched January 2022...</h3>
         <ul class="flex flex-wrap m-4">
             <li
             v-for="cms of cmss"

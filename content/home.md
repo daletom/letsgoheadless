@@ -5,7 +5,7 @@ description: 'This is the home page.'
 
 <Hero2></Hero2>
 
-What is this site? It's currently in process, but it's essentially a site to look at several options for connecting a headless CMS to a jamstack front-end.  More info to come...
+What is this site? It's currently in process, but it's essentially a site to look at several options for connecting a headless CMS to a jamstack front-end.  To be launched January 2022...
 
 ## What is a Headless CMS?
 
@@ -24,4 +24,4 @@ I have laid out in a grid each of the websites I created using a headless CMS.  
 
 The Dekstop & Mobile Pagespeeds are from Google Pagespeed Insights.  It is difficult to get an exact score for each site, because it can vary slightly from each check with Google.  I have attempted to average a score from 10+ tests for each site.  The scores are not meant to necessarily deter you from choosing a solution. All solutions here would be better than a traditional CMS and will have significantly higher scores.
 
-<Grid></Grid>
+Grid Component to be added..
