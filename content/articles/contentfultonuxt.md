@@ -1,4 +1,4 @@
----
+<!---
 title: Contentful to Nuxt.js
 description: 'A tutorial for using the Headless CMS Contentul with the front-end framework Nuxt.js.'
 img: https://tom.imgix.net/contentfultonuxt_tutorial.png?auto=format,compress&w=400

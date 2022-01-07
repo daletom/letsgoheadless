@@ -1,4 +1,4 @@
----
+<!---
 title: Dato CMS to Nuxt.js
 description: 'A tutorial for using the Dato CMS, a headless CMS, with the front-end framework Nuxt.js.'
 img: https://tom.imgix.net/datotonuxt_tutorial.png?auto=format,compress&w=400
