@@ -1,13 +1,15 @@
 <template>
   <div class="flex flex-rounded-lg shadow-lg overflow-hidden pb-4">
     <div class="w-full lg:flex">
-      <div class="video">
-        <lite-youtube
-          class="youtube"
-          videoid="8M16E8fNSE4"
-          style="background-image: url('https://tom.imgix.net/whatisheadless_videothumb.png?auto=format,compress&w=600&mark-align=middle,center&mark=youtubeicon.svg');"
-        />
-      </div>
+      <div class="video aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
+              <iframe
+                class="modest-vid-embed__item w-full h-full"
+                src="https://www.youtube.com/embed/8M16E8fNSE4?mute=0&autoplay=0&modestbranding=1&loop=1&rel=0&amp;controls=1&amp;showinfo=0&playlist=8M16E8fNSE4"
+                frameborder="0"
+                allowfullscreen
+              >
+              </iframe>
+            </div>
       <div class="flex-1 p-4">
         <h2 class="text-primary mt-2 text-xl leading-7 font-semibold inline">
           What is Headless?
@@ -51,8 +53,8 @@ list-style-type: circle;
 }
 
 .video {
-  width: 600px;
-  height: 300px;
+  width: 800px;
+  height: 400px;
 }
 
 .youtube {

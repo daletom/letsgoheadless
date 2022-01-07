@@ -1,14 +1,14 @@
 <template>
     <div class="flex flex-rounded-lg shadow-lg overflow-hidden pb-4">
         <div class="w-full lg:flex">
-            <div class="video">
-                <a :href="`https://www.youtube.com/watch?v=${item.video}`" target="_blank" rel="noopener noreferrer">
-                <ix-img
-                    :src="item.image_url"
-                    :imgixParams="{ mark: 'https://tom.imgix.net/youtubeicon.svg', 'mark-align': 'middle,center', 'mark-scale': '25' }"
-                    sizes="(max-width: 600px) 100vw, 600px"
-                />
-                </a>
+            <div class="video aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
+              <iframe
+                class="modest-vid-embed__item w-full h-full"
+                :src="'https://www.youtube.com/embed/'+ item.video + `?mute=0&autoplay=0&modestbranding=1&loop=1&rel=0&amp;controls=1&amp;showinfo=0&playlist=` + item.video"
+                frameborder="0"
+                allowfullscreen
+              >
+              </iframe>
             </div>
             <div class="flex-1 p-4">
                 <div>
