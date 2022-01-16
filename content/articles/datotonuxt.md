@@ -1,11 +1,11 @@
-<!---
+---
 title: Dato CMS to Nuxt.js
 description: 'A tutorial for using the Dato CMS, a headless CMS, with the front-end framework Nuxt.js.'
 img: https://tom.imgix.net/datotonuxt_tutorial.png?auto=format,compress&w=400
 alt: Dato CMS to Nuxt Tutorial image
 ---
 
-Whatever my welcome paragraph is.  Include a YT link, live url link, and gh link.  Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
+Welcome to a tutorial using Dato CMS as a headless CMS with Nuxt.js as a front-end framework.  I will take you through to steps of starting a Nuxt.js app from start to finish.  We will also be setting up a new Dato CMS account as well.  The tutorial will also be utilizing Tailwind CSS as the UI framework, the Nuxt Image module to generate a responsive design with imgix images from Dato CMS, Apollo for GraphQL, and deploying with Vercel.
 
 ## Installation
 
@@ -73,42 +73,49 @@ This should allow us to add a query for our content in Dato CMS and view it.
 
 ## Adding Code to View Basic Scaffolding
 
-Go to your components folder.  You can delete the `Tutorial.vue` file in the components folder. Let's create a new component called Teaser.vue.
+It's time to open up your favorite code editor for the Nuxt project you created. Go to the `index.vue` file in your pages folder and you should see a `<Tutorial>` component. You can leave that, but we will be modifying the `tutorial.vue` file which is the content.
 
-In that component, let's add the code to show your teaser post:
+Go to the `tutorial.vue` file in the pages folder.  Let's replace the code with this:
 
 ```javascript
 <template>
-    <div class="text-center bg-white rounded-xl shadow-md">
-      <h1 class="blog-title">
-        Hello World
-      </h1>
-      <div class="py-8 px-8 mx-auto space-y-2 sm:py-4 sm:flex sm:items-center sm:space-y-0 sm:space-x-6 md:py-4 md:flex md:items-center md:space-y-0 md:space-x-6">
-        <img
-          src="https://tom.imgix.net/1x1_motif.png?ixlib=vue-2.9.0&auto=format%2Ccompress&txt=Place%20Holder&ar=1%3A1&bg=grey&txt-align=middle%2Ccenter&txt-size=75&txt-fit=max&w=380"
-        />
-        <div class="text-center space-y-2">
-          <div class="space-y-0.5">
-          <p class="blog-description inline">This is my blog post.</p> 
+  <div class="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+    <div class="absolute inset-0">
+      <div class="bg-white h-1/3 sm:h-2/3" />
+    </div>
+    <div class="relative max-w-7xl mx-auto">
+      <div class="text-center">
+        <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+          Hello World
+        </h2>
+        <p class="mt-3 max-w-2xl mx-auto text-xl text-gray-500 sm:mt-4">
+           This is my demo, using Cosmic as a headless CMS and Nuxt.js as a frontend. Apollo graphQl is used to connect the API from Cosmic to Nuxt.  It is deployed using Vercel. 
+        </p>
+      </div>
+      <div class="mt-12 max-w-lg max-w-md mx-auto grid gap-5 lg:grid-cols-3 md:grid-cols-2 lg:max-w-none md:max-w-none">
+        <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+          <div class="flex-shrink-1">
+            <img class="h-48 w-full object-cover" src="https://tom.imgix.net/1x1_motif.png?ixlib=vue-2.9.0&auto=format%2Ccompress&txt=Place%20Holder&ar=1%3A1&bg=grey&txt-align=middle%2Ccenter&txt-size=75&txt-fit=max&w=380" alt="" />
+          </div>
+          <div class="flex-1 bg-white p-6 flex flex-col justify-between">
+            <div class="flex-1">
+                <p class="text-xl font-semibold text-gray-900">
+                  Example Title
+                </p>
+                <p class="mt-3 text-base text-gray-500">
+                Example Post
+                </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </template>
 
 <script>
 export default {}
 </script>
-```
-
-Go to the `index.vue` file in your pages folder and replace the `<Tutorial>` component with a `<Teaser />` component.  Let's add some tailwind css to this home page as well.  Your index.vue will look like this now: 
-
-```javascript
-<template>
-  <div class="lg:pl-24 lg:pr-24 pt-4">
-    <Teaser />
-  </div>
-</template>
 ```
 
 You're not using any of the Dato CMS APIs yet, I'm just building the scaffolding first.  So if you go to your terminal and type `npm run dev` or the similar yarn command, you should be able to go to `localhost:3000` and see a placeholder image with text. I have heard some instances where people see an error here for the @vue/composition-api.  If you are seeing that error, then do a cmd + c to stop the command in the terminal.  Then do:
@@ -119,15 +126,15 @@ npm install --save @vue/composition-api
 
 This will clear up that error. If you didn't receive that error, no need to install this.
 
-If you're not familiar with Tailwind CSS, I am using Tailwind for the design.  In the `class` sections of each element, I am using short words from Tailwind to create the design.  The article should appear to be on a floating card with a shadow. It will have a margin until the browser is smaller than 1024 pixels.  The text on the post will shift from being on the right to below the image once the browser goes smaller than 640 pixels.
+If you're not familiar with Tailwind CSS, I am using Tailwind for the design.  In the `class` sections of each element, I am using short words from Tailwind to create the design.  
 
-## Creating Dato CMS GraphQL for teaser post
+## Creating Dato CMS GraphQL for posts
 
-Next let's remove the placeholder info and connect to the Dato CMS API. We will be using Apollo to to do this.  I am going to create a new folder called apollo. Inside of apollo, go ahead and create another folder called queries.  Inside, create a file called getTeaser.gql.  This is where we will build out our graphQL.  We need the id, title, content and image from our teaser post to display.  In order to call that, I will create a call in the getTeaser.gql like this:
+Next let's remove the placeholder info and connect to the Dato CMS API. We will be using Apollo to to do this.  I am going to create a new folder called apollo. Inside of apollo, go ahead and create another folder called queries.  Inside, create a file called getPosts.gql.  This is where we will build out our graphQL.  We need the id, title, content and image from our post to display.  In order to call that, I will create a call in the getPosts.gql like this:
 
 ```
 {
-        teaser: teaser {
+        allPosts: allPosts {
           id
           title
           content
@@ -138,42 +145,69 @@ Next let's remove the placeholder info and connect to the Dato CMS API. We will 
       }
 ```
 
-Now we need to import this file into the Teaser.vue.  Go to the Teaser.vue and let's create a script section at the bottom if it already isn't there.  We will import the file, then in the export section we are calling `teaser`, setting it to prefetch, and I will set the query to the same name as the file.  This is what it looks like:
+Now we need to import this file into the Tutorial.vue.  Go to the Tutorial.vue and let's create a script section at the bottom if it already isn't there.  We will import the file, then in the export section we are calling `allPosts`, setting it to prefetch, and I will set the query to the same name as the file.  This is what it looks like:
 
 ```javascript
 <script>
-import getTeaser from '../apollo/queries/getTeaser.gql'
+import allPosts from '../apollo/queries/allPosts.gql'
 
 export default {
   apollo: {
-    teaser: {
+    allPosts: {
       prefetch: true,
-      query: getTeaser
+      query: allPosts
     }
   },
 };
 </script>
 ```
 
-Now to replace the placeholder info.  In the h1 blog title section, remove Hello World with:
+You can also modify the template area, to bind the data correctly to our Tutorial component. Like this: 
 
 ```javascript
-{{teaser.title}}
+<Tutorial v-bind:data="allPosts" />
 ```
 
-Then replace the `This is my blog post.` that is in the `<p>` section with this: 
+Now to replace the placeholder info.  Go to the `<Tutorial.vue` component.  In your script section, you will need to add data to the props section. Like this: 
 
 ```javascript
-{{teaser.content}}
+<script>
+export default {
+  props: ['data']
+}
+</script>
 ```
 
-Let's skip the image for one moment and do that in the next section about optimizing your teaser image.
+On line 16, you will need to add a `v-for` to loop each post and display a new article.  The div will now look like this: 
 
-Now refresh your browser on your localhost:3000 and let's see the changes take effect.  It should have all of your written content now!  
+```javascript
+<div v-for="post in data" :key="post.id" class="flex flex-col rounded-lg shadow-lg overflow-hidden">
+```
+
+Next, replace the entire `<img>` section with this:
+
+```javascript
+<img class="h-48 w-full object-cover" :src="allPost.heroimage.url" alt="" />
+```
+In the p section, with your Example Title placeholder, replace it with this:
+
+```javascript
+{{allPost.title}}
+```
+
+Then replace the `Example post.`: 
+
+```javascript
+<p class="mt-3 text-base text-gray-500" >
+  {{allPost.content}}
+</p> 
+```
+
+Now refresh your browser on your localhost:3000 and let's see the changes take effect.  It should have all of your content now! 
 
 ## Optimizing your teaser image
 
-So all Dato CMS accounts use an image service called Imgix to optimize their images.  It's a really powerful item to offer for free with all Dato CMS accounts which is great. You can simply add corresponding imgix APIs to the end of the Dato CMS URLs in order to optimize the images further.  They also have a very intriguing responsiveImage option as well that gives you access to blur ups.  
+So all Dato CMS accounts use an image service called imgix to optimize their images.  It's a really powerful item to offer for free with all Dato CMS accounts which is great. You can simply add corresponding imgix APIs to the end of the Dato CMS URLs in order to optimize the images further.  They also have a very intriguing responsiveImage option as well that gives you access to blur ups.  
 
 I am going to keep it a little simple since we are using Nuxt and use the Nuxt Image functionality.  
 
@@ -183,7 +217,7 @@ Let's install Nuxt image:
 npm install -D @nuxt/image
 ```
 
-Then go into your `nuxt.config.js` file and add `@nuxt/image` to the buildModules section.  Now below that, add a new section called image and add prismic.  It will look like this: 
+Then go into your `nuxt.config.js` file and add `@nuxt/image` to the buildModules section.  Now below that, add a new section called image and add imgix.  It will look like this: 
 
 ```javascript
   buildModules: [
@@ -202,95 +236,33 @@ You can now go back to your index.vue file and update the `<img>` tag to a `<nux
 
 ```javascript
 <nuxt-img
-          provider="imgix"
-          :src="teaser.heroimage.url"
-          class="lg:w-3/5 md:w-1/2 sm:w-1/2 w-full"
-          sizes="xl:60vw, lg:60vw, md:50vw, sm:90vw, xs:90vw"
-          fit="crop"
-          :modifiers="{ crop: 'faces,edges', ar: '1.8:1', ch: 'dpr,width', auto: 'format,compress'}"
+  provider="imgix"
+  class="h-48 w-full object-cover"
+  sizes="xl:413px, lg:50vw, md:448px, sm:900px, xs:90vw)"
+  :src="allPost.heroimage.url"
+  fit="crop"
+  :modifiers="{ crop: 'faces,entropy', ar: '2.3:1', ch: 'dpr,width', auto: 'format,compress'}"
         />
 ```
 
-This is generating a responsive design, using the right size image at each size of the browser. You will notice I have also added some tailwind classes here, this is to have the image be 60% of the the container about 1024 pixels, then be half the container until you get smaller than 640 pixels which will have the image be full width and move the article text below the image.
-
-## Connecting Dato CMS API for Repeatable Post
-
-Now that we have our teaser post sorted, it is time to add our repeatable post.  This should be pretty easy, because it will be similar to what we did with our teaser post.  In our apollo queries folder, we will need to add a getPosts.gql file now.  We will write a very similar request for the content of the posts, it will look like this:
-
-```
-{
-        allPosts: allPosts {
-          id
-          title
-          content
-          heroimage {
-            url
-          }
-        }
-      }
-```
-
-Now, lets go into our components and create a `Posts.vue` component. In this code, we will add a v-for for the posts.  If you are unfamiliar with Nuxt, this is a great benefit.  You're essentially setting up a repeatable section of code. It will check the api for the amount of results, then repeat the code for each result but replace certain items, such as image, title, etc for every single instance.  This is what it looks like:
-
-```javascript
-<div v-for="allPost in allPosts" :key="allPost.id" v-bind:allPost="allPost" class="p-4 lg:w-1/3 md:w-1/2 sm:w-full">
-```
-
-You typically do a v-for then a singular for a plural of the same type.  The key to differentiate is going to the id for each post.  This section will also be split into 3 columns in a larger view, then 2 columns, and single colum for mobile.  Next, let's add in our title, image, and content.  This will be the same way we did it for the teaser post.  I will use the responsive image as well.  Here is what it looks like:
-
-```javascript
-<template>
-    <div class="flex flex-wrap">
-      <div v-for="allPost in allPosts" :key="allPost.id" v-bind:allPost="allPost" class="p-4 lg:w-1/3 md:w-1/2 sm:w-full">
-      <h2>{{allPost.title}}</h2>
-      <nuxt-img
-          provider="imgix"
-          :src="allPost.heroimage.url"
-          sizes="xl:30vw, lg:40vw, md:90vw, sm:90vw, xs:90vw"
-          fit="crop"
-          loading="lazy"
-          :modifiers="{ crop: 'faces,edges', ar: '1.8:1', ch: 'dpr,width', auto: 'format,compress'}"
-        />
-      <p>{{allPost.content}}</p>
-      </div>
-    </div>
-</template>
-```
-
-You will notice that I did add a `loading=lazy` to the img tag here, but not for the teaser.  Generally speaking, images above the fold don't need a lazy load, but the images below would benefit greatly from this. That way images from posts are not loading too early and hurting the performance of the site.  
-
-Now let's import that `getPosts` query we created in script section.  Again, very similar to what we did with the teaser.  
-
-```javascript
-<script>
-import getPosts from '../apollo/queries/getPosts.gql'
-
-export default {
-  apollo: {
-    allPosts: {
-      prefetch: true,
-      query: getPosts
-    }
-  },
-};
-</script>
-```
-
-Now go back to your index.vue file in your pages folder and add the `<Posts />` component.  It will look like this:
-
-```javascript
-<template>
-  <div class="lg:pl-24 lg:pr-24 pt-4">
-    <Teaser />
-    <Posts />
-  </div>
-</template>
-```
-
-You might wonder why I have added componenents in the index.vue file instead of putting my code here.  I think it is easier from an organization standpoint.  Also, from a technical standpoint, it's difficult to have 2 separate graphQL calls happening in the same file.  So to make that simpler, I created 2 components, where each component had it's own graphQL call.  
+This is generating a responsive design, using the right size image at each size of the browser. You will notice I have also added some sizes here, this is what generates different srcset versions to correctly size the image to match the css. It's key to add the sizes.  
 
 ## Deploying the Site
 
 At this point, I think we have done a pretty good job adding our teaser post and repeatable posts.  There's certainly a ton of other great stuff we could keep doing.  Like adding a navbar, footer, or creating dynamic pages for each article.  I wanted to focus more on getting you started quickly with Dato CMS and Nuxt to get easily to a point where you feel more comfortable with the api and displaying the content using Nuxt.  
 
-Next we will want to deploy this website.  I am going to choose to use Vercel for this...
+Next we will want to deploy this website.  I am going to choose to use Vercel for this. To make the deployment on Vercel smooth, I am going to use their nuxtjs/vercel-builder.  So let's create a `vercel.json` file in your project.  Then add this to it: 
+
+```javascript
+{
+    "builds": [
+        {
+        "src": "nuxt.config.js",
+        "use": "@nuxtjs/vercel-builder",
+        "config": {}
+        }
+    ]
+}
+```
+
+Now you can add your code to your Github repo and then login to Vercel.com.  Click on `New Project`. If you have the Vercel for Github, then you should already see your new Github repo that you created. If you don't, you can setup that integration here: https://vercel.com/docs/concepts/git/vercel-for-github.  Click on your repo, no need to change any of the default settings on Vercel, and press deploy.  After about 90 seconds, it should be deployed!

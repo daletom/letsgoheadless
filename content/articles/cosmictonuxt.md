@@ -160,7 +160,7 @@ export default {
 You can also modify the template area, to bind the data correctly to our Tutorial component. Like this: 
 
 ```javascript
-<teaser v-bind:data="getObjects.objects" />
+<Tutorial v-bind:data="getObjects.objects" />
 ```
 
 Now to replace the placeholder info.  Go to the `<Tutorial.vue` component.  In your script section, you will need to add data to the props section. Like this: 
@@ -242,7 +242,7 @@ You can now go back to your index.vue file and update the `<img>` tag to a `<nux
   sizes="xl:413px, lg:50vw, md:448px, sm:900px, xs:90vw)"
   :src="post.metadata.heroimage.imgix_url"
   fit="crop"
-  :modifiers="{ auto: 'compress', crop: 'faces,edges', ar: '2.3:1'}"
+  :modifiers="{ auto: 'compress', crop: 'faces,entropy', ar: '2.3:1'}"
         />
 ```
 
