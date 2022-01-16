@@ -109,9 +109,9 @@ export default {}
 </script>
 ```
 
-You're not using any of the Prismic APIs yet, I'm just building the scaffolding first.  So if you go to your terminal and type `npm run dev` or the similar yarn command, you should be able to go to `localhost:3000` and see a placeholder image with text. If you're not familiar with Tailwind CSS, I am using Tailwind for the design.  In the `class` sections of each element, I am using short words from Tailwind to create the design.  The article should appear to be on a floating card with a shadow. It will have a margin until the browser is smaller than 1024 pixels.  The text on the post will shift from being on the right to below the image once the browser goes smaller than 640 pixels.
+You're not using any of the Contentful APIs yet, I'm just building the scaffolding first.  So if you go to your terminal and type `npm run dev` or the similar yarn command, you should be able to go to `localhost:3000` and see a placeholder image with text. If you're not familiar with Tailwind CSS, I am using Tailwind for the design.  In the `class` sections of each element, I am using short words from Tailwind to create the design.  The article should appear to be on a floating card with a shadow. It will have a margin until the browser is smaller than 1024 pixels.  The text on the post will shift from being on the right to below the image once the browser goes smaller than 640 pixels.
 
-## Connecting Prismic API for teaser post
+## Connecting Contentful API for teaser post
 
 Next let's remove the placeholder info and connect to the Prismic API. We will be using the `@nuxtjs/prismic` module to to do this.  I am going to be using an async request to set the teaser as the data from a prismic api call.  It will look like this:
 

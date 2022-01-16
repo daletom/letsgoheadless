@@ -25,7 +25,8 @@ module.exports = {
         duststorm: '#F6EAD0',
         tomblue: '#214B91',
         tomred: '#BF1E2F',
-        tomorange: '#F25827'
+        tomorange: '#F25827',
+        lghblue: '#262161'
       },
       inset: {
         '16': '4rem',
@@ -129,6 +130,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/typography'),
+    require('@tailwindcss/aspect-ratio'),
     plugin(function({ addUtilities }) {
       const newUtilities = {
         '.teal-glow': {

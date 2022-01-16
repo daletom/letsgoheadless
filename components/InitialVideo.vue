@@ -26,12 +26,12 @@
         <p class="text-xl pt-5">Would you like to see more videos or learn more about the site? Click below</p>
             <div class="pt-10">
               <nuxt-link to="/videos">
-              <button class="bg-tomblue hover:bg-tomorange text-white font-bold py-2 px-4 rounded">
+              <button class="mt-8 border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium bg-tomblue hover:bg-tomorange text-white">
                 More Videos
               </button>
               </nuxt-link>
               <nuxt-link to="/about">
-              <button class="bg-tomblue hover:bg-tomorange text-white font-bold py-2 px-4 rounded">
+              <button class="mt-8 border border-transparent rounded-md shadow px-5 py-3 inline-flex items-center text-base font-medium bg-tomblue hover:bg-tomorange text-white">
                 About Page
               </button>
               </nuxt-link>

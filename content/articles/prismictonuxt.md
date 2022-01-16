@@ -12,7 +12,9 @@ Welcome to a tutorial using Prismic as a headless CMS with Nuxt.js as a front-en
                 src="https://www.youtube.com/embed/oLbsqXT1jcQ?mute=0&autoplay=0&modestbranding=1&loop=1&rel=0&amp;controls=1&amp;showinfo=0&playlist=oLbsqXT1jcQ"
                 frameborder="0"
                 allowfullscreen
-              ></iframe> <br> Here is a link to the live site: https://prismictonuxt.letsgoheadless.com/.
+              ></iframe> 
+              
+<br> Here is a link to the live site: https://prismictonuxt.letsgoheadless.com/ .
 
 You can also see the github link here: https://github.com/daletom/prismiccmstonuxt .  
 

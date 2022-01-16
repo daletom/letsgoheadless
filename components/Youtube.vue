@@ -1,9 +1,9 @@
 <template>
     <div class="flex flex-rounded-lg shadow-lg overflow-hidden pb-4">
-        <div class="w-full lg:flex">
+        <div class="w-full lg:flex video">
             <div class="video aspect-w-3 aspect-h-2 rounded-lg overflow-hidden">
               <iframe
-                class="modest-vid-embed__item w-full h-full"
+                class="modest-vid-embed__item video"
                 :src="'https://www.youtube.com/embed/'+ item.video + `?mute=0&autoplay=0&modestbranding=1&loop=1&rel=0&amp;controls=1&amp;showinfo=0&playlist=` + item.video"
                 frameborder="0"
                 allowfullscreen

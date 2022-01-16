@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@nuxt/content": "^1.14.0",
+    "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/typography": "^0.4.1",
     "ag-grid-community": "^25.3.0",
     "ag-grid-vue": "^25.3.0",
