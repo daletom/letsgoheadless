@@ -1,7 +1,7 @@
 ---
 title: Cosmic to Nuxt.js
 description: 'A tutorial for using Cosmic, a headless CMS, with the front-end framework Nuxt.js.'
-img: https://tom.imgix.net/cosmictonuxt_tutorial.png?auto=format,compress&w=400
+img: /cosmictonuxt_tutorial.png
 alt: Cosmic to Nuxt Tutorial image
 ---
 

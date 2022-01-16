@@ -1,7 +1,7 @@
 ---
 title: Prismic to Nuxt.js
 description: 'A tutorial for using the Headless CMS Prismic with the front-end framework Nuxt.js.'
-img: https://tom.imgix.net/prismictonuxt_tutorial.png?auto=format,compress&w=400
+img: /prismictonuxt_tutorial.png
 alt: Prismic to Nuxt Tutorial
 ---
 

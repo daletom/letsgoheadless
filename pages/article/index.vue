@@ -12,7 +12,11 @@
                 :to="`/article/${article.slug}`"
                 class="flex transition-shadow duration-150 ease-in-out shadow-sm hover:shadow-md flex-col"
                 >
-                    <img :src="article.img" :alt="article.alt" />
+                    <ix-img
+                      :src="article.img"
+                      :alt="article.alt"
+                      sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+                    />
                     <div class="p-6 flex flex-col justify-between w-full">
                         <h2 class="font-bold">{{ article.title }}</h2>
                     </div>
