@@ -40,7 +40,8 @@ export default {
       { cms: "Dato CMS", frontend: "NextJS", mobile: 86, desktop: 99, link: "datocmstonextjs" },
       { cms: "Dato CMS", frontend: "NuxtJS", mobile: 97, desktop: 99, link: "datotonuxt" },
       { cms: "Takeshape", frontend: "NuxtJS", mobile: 78, desktop: 89, link: "takeshapetonuxt" },
-      { cms: "Prismic", frontend: "NuxtJS", mobile: 86, desktop: 91, link: "prismictonuxt" }
+      { cms: "Prismic", frontend: "NuxtJS", mobile: 86, desktop: 91, link: "prismictonuxt" },
+      { cms: "Cosmic", frontend: "NuxtJS", mobile: 97, desktop: 100, link: "cosmictonuxt" }
     ];
   }
 };
