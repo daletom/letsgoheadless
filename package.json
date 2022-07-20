@@ -12,11 +12,9 @@
     "@nuxt/content": "^1.14.0",
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/typography": "^0.4.1",
-    "ag-grid-community": "^25.3.0",
-    "ag-grid-vue": "^25.3.0",
     "core-js": "^3.15.2",
     "lite-youtube-embed": "^0.2.0",
-    "nuxt": "^2.15.7",
+    "nuxt": "^2.12.2",
     "vue-class-component": "^7.2.6",
     "vue-imgix": "^2.9.0",
     "vue-property-decorator": "^9.1.2"

@@ -1,55 +1,55 @@
 <template>
-<nav class="bg-tomblue nav transition-colors duration-500 z-10 mb-2" :class="[page === 'article' ? 'fixed top-0 w-full'  : 'relative']">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+<nav class="z-10 mb-2 transition-colors duration-500 bg-tomblue nav" :class="[page === 'article' ? 'fixed top-0 w-full'  : 'relative']">
+  <div class="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
     <div class="flex items-center justify-between h-16">
       <div class="flex items-center">
         <div class="flex-shrink-0">
           <nuxt-link to="/" class="flex items-center text-tomorange hover:text-white">
             <Logo class="block lg:hidden"/>
             <Logo class="hidden lg:block"/>
-            <span class="font-h1 font-bold text-2xl ml-3">Let's Go Headless</span>
+            <span class="ml-3 text-2xl font-bold font-h1">Let's Go Headless</span>
           </nuxt-link>
         </div>
         <div class="hidden sm:block sm:ml-6">
           <div class="flex">
             <div class="relative flex ml-0">
-              <nuxt-link to="/article/" href="#" class="px-3 py-2 rounded-md text-2xl font-h2 font-medium leading-5 text-tomorange hover:text-white focus:outline-none transition duration-150 ease-in-out group link-style">Tutorials</nuxt-link>
-              <nuxt-link to="/cmss/" href="#" class="px-3 py-2 rounded-md text-2xl font-h2 font-medium leading-5 text-tomorange hover:text-white focus:outline-none transition duration-150 ease-in-out group link-style">CMS</nuxt-link>
-              <nuxt-link to="/frameworks/" href="#" class="px-3 py-2 rounded-md text-2xl font-h2 font-medium leading-5 text-tomorange hover:text-white focus:outline-none transition duration-150 ease-in-out group link-style">Frameworks</nuxt-link>
-              <nuxt-link to="/videos/" href="#" class="px-3 py-2 rounded-md text-2xl font-h2 font-medium leading-5 text-tomorange hover:text-white focus:outline-none transition duration-150 ease-in-out group link-style">Videos</nuxt-link>
-              <nuxt-link to="/about/" href="#" class="px-3 py-2 rounded-md text-2xl font-h2 font-medium leading-5 text-tomorange hover:text-white focus:outline-none transition duration-150 ease-in-out group link-style">About</nuxt-link>
+              <nuxt-link to="/article/" href="#" class="px-3 py-2 text-2xl font-medium leading-5 transition duration-150 ease-in-out rounded-md font-h2 text-tomorange hover:text-white focus:outline-none group link-style">Tutorials</nuxt-link>
+              <!--<nuxt-link to="/cmss/" href="#" class="px-3 py-2 text-2xl font-medium leading-5 transition duration-150 ease-in-out rounded-md font-h2 text-tomorange hover:text-white focus:outline-none group link-style">CMS</nuxt-link>
+              <nuxt-link to="/frameworks/" href="#" class="px-3 py-2 text-2xl font-medium leading-5 transition duration-150 ease-in-out rounded-md font-h2 text-tomorange hover:text-white focus:outline-none group link-style">Frameworks</nuxt-link>-->
+              <nuxt-link to="/videos/" href="#" class="px-3 py-2 text-2xl font-medium leading-5 transition duration-150 ease-in-out rounded-md font-h2 text-tomorange hover:text-white focus:outline-none group link-style">Videos</nuxt-link>
+              <!--<nuxt-link to="/about" href="#" class="px-3 py-2 text-2xl font-medium leading-5 transition duration-150 ease-in-out rounded-md font-h2 text-tomorange hover:text-white focus:outline-none group link-style">About</nuxt-link>-->
             </div>
           </div>
         </div>
       </div>
-      <div class="-mr-2 flex sm:hidden">
+      <div class="flex -mr-2 sm:hidden">
         <!-- Mobile menu button -->
-        <button type="button" @click="toggleMobileMenu" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" v-if="!showMobileMenu">
+        <button type="button" @click="toggleMobileMenu" class="inline-flex items-center justify-center p-2 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white" aria-label="Main menu" aria-expanded="false">
+          <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" v-if="!showMobileMenu">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
       </div>
     </div>
   </div>
-  <div class="mobile-menu fixed overflow-hidden inset-0 z-50" v-show="showMobileMenu">
-    <button type="button" @click="toggleMobileMenu" class="z-50 absolute top-0 right-0 m-3 inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out" aria-label="Main menu" aria-expanded="false">
-      <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <div class="fixed inset-0 z-50 overflow-hidden mobile-menu" v-show="showMobileMenu">
+    <button type="button" @click="toggleMobileMenu" class="absolute top-0 right-0 z-50 inline-flex items-center justify-center p-2 m-3 text-gray-400 transition duration-150 ease-in-out rounded-md hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white" aria-label="Main menu" aria-expanded="false">
+      <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
       </svg>
     </button>
-    <div class="h-screen w-screen bg-darkteal absolute inset-0 opacity-75">
+    <div class="absolute inset-0 w-screen h-screen opacity-75 bg-darkteal">
 
     </div>
     <div class="block">
       <nav class="">
         <div class="ml-12">
-          <nuxt-link @click.native="showMobileMenu = false" to="/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Home</nuxt-link>
-          <nuxt-link @click.native="showMobileMenu = false" to="/article/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Tutorials</nuxt-link>
-          <nuxt-link @click.native="showMobileMenu = false" to="/cms/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">CMS</nuxt-link>
-          <nuxt-link @click.native="showMobileMenu = false" to="/frameworks/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Frameworks</nuxt-link>
-          <nuxt-link @click.native="showMobileMenu = false" to="/videos/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">Videos</nuxt-link> 
-          <nuxt-link @click.native="showMobileMenu = false" to="/about/" class="mt-1 block px-3 py-2 rounded-md text-2xl font-h2 text-gray-300 focus:outline-none transition duration-150 ease-in-out">About</nuxt-link>
+          <nuxt-link @click.native="showMobileMenu = false" to="/" class="block px-3 py-2 mt-1 text-2xl text-gray-300 transition duration-150 ease-in-out rounded-md font-h2 focus:outline-none">Home</nuxt-link>
+          <nuxt-link @click.native="showMobileMenu = false" to="/article/" class="block px-3 py-2 mt-1 text-2xl text-gray-300 transition duration-150 ease-in-out rounded-md font-h2 focus:outline-none">Tutorials</nuxt-link>
+          <nuxt-link @click.native="showMobileMenu = false" to="/cms/" class="block px-3 py-2 mt-1 text-2xl text-gray-300 transition duration-150 ease-in-out rounded-md font-h2 focus:outline-none">CMS</nuxt-link>
+          <nuxt-link @click.native="showMobileMenu = false" to="/frameworks/" class="block px-3 py-2 mt-1 text-2xl text-gray-300 transition duration-150 ease-in-out rounded-md font-h2 focus:outline-none">Frameworks</nuxt-link>
+          <nuxt-link @click.native="showMobileMenu = false" to="/videos/" class="block px-3 py-2 mt-1 text-2xl text-gray-300 transition duration-150 ease-in-out rounded-md font-h2 focus:outline-none">Videos</nuxt-link> 
+          <nuxt-link @click.native="showMobileMenu = false" to="/about/" class="block px-3 py-2 mt-1 text-2xl text-gray-300 transition duration-150 ease-in-out rounded-md font-h2 focus:outline-none">About</nuxt-link>
         </div>
       </nav>
     </div>

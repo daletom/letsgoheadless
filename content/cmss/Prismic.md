@@ -70,12 +70,6 @@ Id diam maecenas ultricies mi eget. Nibh praesent tristique magna sit amet. Cons
 <template>
   <div class="flex h-full">
       <no-ssr>
-
-    <ag-grid-vue style="width: 1000px; height: 500px;"
-                 class="ag-theme-alpine"
-                 :columnDefs="columnDefs"
-                 :rowData="rowData">
-    </ag-grid-vue>
 </no-ssr>
 
   </div>
